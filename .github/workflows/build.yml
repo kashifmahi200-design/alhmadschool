@@ -17,21 +17,12 @@ jobs:
       with:
         python-version: "3.10"
 
-    - name: Install system dependencies
+    - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y git zip unzip openjdk-17-jdk wget curl
+        sudo apt install -y git zip unzip openjdk-17-jdk
         pip install --upgrade pip
         pip install buildozer cython
-
-    - name: Install Android SDK tools (AIDL fix)
-      run: |
-        mkdir -p $HOME/android-sdk
-        cd $HOME/android-sdk
-        wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
-        unzip commandlinetools-linux-*.zip
-        mkdir -p cmdline-tools/latest
-        mv cmdline-tools/* cmdline-tools/latest/ || true
 
     - name: Build APK
       run: |
