@@ -29,5 +29,6 @@ jobs:
         rm -rf .buildozer
 
     - name: Build APK
-      run: |
-        buildozer -v android debug
+  run: |
+    rm -rf .buildozer
+    buildozer -v android debug
