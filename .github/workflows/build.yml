@@ -44,7 +44,14 @@ jobs:
           "platform-tools" \
           "platforms;android-33" \
           "build-tools;33.0.0" || true
+    - name: Install Android SDK packages
+      run: |
+        # Licenses accept karna zaroori hai
+        yes | sdkmanager --licenses || true
+        # AIDL aur zaroori tools install karna
+        sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0"
 
     - name: Build APK
       run: |
         buildozer android debug
+    
