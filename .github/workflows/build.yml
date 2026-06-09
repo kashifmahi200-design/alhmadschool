@@ -22,12 +22,10 @@ jobs:
           sudo apt update
           sudo apt install -y git zip unzip openjdk-17-jdk
           pip install --upgrade pip
-          pip install buildozer cython
-
-      - name: Clean
-        run: |
-          rm -rf .buildozer
+          pip install --upgrade buildozer cython
 
       - name: Build APK
         run: |
-          buildozer -v android debug
+          buildozer clean
+          yes | buildozer android debug
+          
