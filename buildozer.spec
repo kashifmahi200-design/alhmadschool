@@ -18,7 +18,7 @@ android.permissions = INTERNET,ACCESS_NETWORK_STATE
 
 android.api = 33
 android.minapi = 21
-android.ndk = 23b
+android.ndk = 25b
 
 # NEW LINES
 android.accept_sdk_license = True
